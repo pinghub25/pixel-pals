@@ -6,8 +6,8 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "1.0"
-    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "1.1"
+    CURRENT_PROJECT_VERSION: "2"
     CODE_SIGN_STYLE: Automatic
     # Change this one value to your own reverse-domain ID; everything else derives from it.
     APP_BUNDLE_ID: com.matsavin.pixelpals
@@ -20,12 +20,16 @@ targets:
       path: IslandHub/Info.plist
       properties:
         CFBundleDisplayName: Pixel Pals
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleLocalizations: [en, ru]
         ITSAppUsesNonExemptEncryption: false
         AppGroupID: group.$(APP_BUNDLE_ID)
         LSApplicationCategoryType: public.app-category.lifestyle
         UILaunchScreen: {}
         NSSupportsLiveActivities: true
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers: [com.matsavin.pixelpals.mood]
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
     entitlements:
       path: IslandHub/IslandHub.entitlements
@@ -46,6 +50,8 @@ targets:
       path: IslandWidget/Info.plist
       properties:
         CFBundleDisplayName: Pixel Pals
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
         AppGroupID: group.$(APP_BUNDLE_ID)

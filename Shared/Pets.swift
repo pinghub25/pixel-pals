@@ -55,6 +55,11 @@ enum PetKind: String, Codable, Hashable, CaseIterable, Identifiable {
         case "W": .white
         case "P": Color(red: 1.0, green: 0.55, blue: 0.65)
         case "R": Color(red: 0.95, green: 0.35, blue: 0.42)
+        case "T": Color(red: 0.45, green: 0.75, blue: 1.0)
+        // Accessories
+        case "M": Color(red: 0.95, green: 0.35, blue: 0.6)
+        case "Y": Color(red: 1.0, green: 0.82, blue: 0.2)
+        case "V": Color(red: 0.35, green: 0.55, blue: 1.0)
         case "B": bodyColor
         case "D": shadeColor
         case "L": bellyColor
@@ -95,15 +100,95 @@ enum PetKind: String, Codable, Hashable, CaseIterable, Identifiable {
         self == .axolotl ? Color(red: 0.95, green: 0.38, blue: 0.58) : Color(red: 1.0, green: 0.62, blue: 0.2)
     }
 
-    func sprite(frame: Int) -> [String] {
+    /// Frames: 0 idle, 1 blink, 2 happy, 3 sad.
+    func sprite(frame: Int, accessory: Accessory? = nil) -> [String] {
         var rows = art.base
-        let overrides = switch frame % 3 {
+        let overrides = switch frame {
         case 1: art.blink
         case 2: art.happy
         default: [Int: String]()
         }
         for (index, row) in overrides { rows[index] = row }
+        if frame == 3 { makeSad(&rows) }
+        if let accessory { wear(accessory, on: &rows) }
         return rows
+    }
+
+    /// Top of the head (where hats sit) and the eyes (row, left pupil column, right pupil column).
+    private var anchors: (headTop: Int, eyes: (row: Int, left: Int, right: Int)) {
+        switch self {
+        case .cat: (4, (7, 4, 10))
+        case .dog: (4, (7, 3, 11))
+        case .bunny: (5, (8, 4, 10))
+        case .frog: (4, (3, 3, 11))
+        case .ghost: (0, (5, 4, 10))
+        case .penguin: (1, (4, 5, 10))
+        case .axolotl: (3, (7, 4, 10))
+        case .dino: (2, (5, 4, 10))
+        }
+    }
+
+    private func wear(_ accessory: Accessory, on rows: inout [String]) {
+        var grid = rows.map(Array.init)
+        func stamp(_ sprite: [String], row: Int, col: Int) {
+            for (dy, line) in sprite.enumerated() {
+                for (dx, code) in line.enumerated() where code != "." {
+                    let y = row + dy, x = col + dx
+                    if (0..<16).contains(y) && (0..<16).contains(x) { grid[y][x] = code }
+                }
+            }
+        }
+        let a = anchors
+        switch accessory {
+        case .bow:
+            stamp(["MM.MM", ".MRM.", "MM.MM"], row: max(0, a.headTop - 2), col: 10)
+        case .partyHat:
+            let hat = ["..W..", "..V..", ".VYV.", "VYVYV"]
+            stamp(hat, row: max(0, a.headTop - hat.count + 1), col: 5)
+        case .crown:
+            let crown = ["Y.YY.Y", "YYYYYY", "YRYYRY"]
+            stamp(crown, row: max(0, a.headTop - crown.count + 1), col: 5)
+        case .sunglasses:
+            let (row, left, right) = a.eyes
+            for eye in [left, right] {
+                stamp(["KKKK", "KKKK"], row: row, col: eye - 1)
+                grid[row][eye] = "W"
+            }
+            for col in (left + 3)..<(right - 1) { grid[row][col] = "K" }
+        }
+        rows = grid.map { String($0) }
+    }
+
+    /// Where each pet's smile and eyes are, so the sad face can be derived from the smile.
+    private var face: (top: Int, corners: [Int], bottom: Int, middle: [Int], tear: (row: Int, col: Int)) {
+        switch self {
+        case .cat: (9, [6, 9], 10, [7, 8], (9, 4))
+        case .dog: (10, [6, 9], 11, [7, 8], (9, 3))
+        case .bunny: (11, [6, 9], 12, [7, 8], (10, 4))
+        case .frog: (9, [3, 12], 10, Array(4...11), (5, 2))
+        case .ghost: (8, [6, 9], 9, [7, 8], (7, 4))
+        case .penguin: (0, [], 0, [], (6, 5))
+        case .axolotl: (9, [6, 9], 10, [7, 8], (9, 4))
+        case .dino: (8, [5, 10], 9, Array(6...9), (7, 4))
+        }
+    }
+
+    /// Flips the smile into a frown (corners drop, middle rises) and adds a tear.
+    private func makeSad(_ rows: inout [String]) {
+        var grid = rows.map(Array.init)
+        let f = face
+        func fill(_ row: Int, _ col: Int) -> Character {
+            let left = grid[row][col - 1], right = grid[row][col + 1]
+            return left != "K" ? left : right
+        }
+        if !f.corners.isEmpty {
+            for col in f.corners { grid[f.top][col] = fill(f.top, col) }
+            for col in f.middle { grid[f.bottom][col] = fill(f.bottom, col) }
+            for col in f.middle { grid[f.top][col] = "K" }
+            for col in f.corners { grid[f.bottom][col] = "K" }
+        }
+        grid[f.tear.row][f.tear.col] = "T"
+        rows = grid.map { String($0) }
     }
 
     private var art: (base: [String], blink: [Int: String], happy: [Int: String]) {
@@ -292,10 +377,11 @@ enum PetKind: String, Codable, Hashable, CaseIterable, Identifiable {
 struct PixelPetView: View {
     var kind: PetKind
     var frame: Int = 0
+    var accessory: Accessory?
 
     var body: some View {
         Canvas { context, size in
-            let rows = kind.sprite(frame: frame)
+            let rows = kind.sprite(frame: frame, accessory: accessory)
             let count = CGFloat(rows.count)
             let px = min(size.width, size.height) / count
             let ox = (size.width - px * count) / 2
@@ -341,5 +427,31 @@ struct AnimatedPet: View {
         }
         .contentShape(Rectangle())
         .onTapGesture { cheerUntil = .now.addingTimeInterval(1.6) }
+    }
+}
+
+/// Unlocked with friendship hearts; worn in the app, the island and the widget.
+enum Accessory: String, Codable, Hashable, CaseIterable, Identifiable {
+    case bow, sunglasses, partyHat, crown
+
+    var id: String { rawValue }
+
+    /// Hearts needed to unlock.
+    var hearts: Int {
+        switch self {
+        case .bow: 10
+        case .sunglasses: 25
+        case .partyHat: 50
+        case .crown: 100
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .bow: String(localized: "Bow", bundle: .app)
+        case .sunglasses: String(localized: "Sunglasses", bundle: .app)
+        case .partyHat: String(localized: "Party hat", bundle: .app)
+        case .crown: String(localized: "Crown", bundle: .app)
+        }
     }
 }

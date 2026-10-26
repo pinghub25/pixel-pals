@@ -43,6 +43,10 @@
 /* Home */
 "Tap %@ to say hi" = "Нажми на %@, чтобы поздороваться";
 "%@ is feeling great" = "%@ в отличном настроении";
+"%@ is doing fine" = "У %@ всё хорошо";
+"%@ is sad" = "%@ грустит";
+"%@ loves you" = "%@ тебя обожает";
+"%@ is so excited" = "%@ в восторге";
 "%@ is hungry" = "%@ хочет есть";
 "%@ wants to play" = "%@ хочет поиграть";
 "%@ is sleepy" = "%@ хочет спать";
@@ -85,3 +89,11 @@
 "No messages yet" = "Пока нет посланий";
 "Your messages appear when Daily content is set to My messages or Mix." = "Твои послания появляются, если в «Что показывать» выбрано «Мои послания» или «Всё понемногу».";
 "%@ · %@" = "%1$@ · %2$@";
+
+/* Accessories */
+"Accessories" = "Аксессуары";
+"Bow" = "Бантик";
+"Sunglasses" = "Очки";
+"Party hat" = "Колпак";
+"Crown" = "Корона";
+"%@ unlocks at %lld ♥ — pet, feed and play to earn hearts" = "%1$@ откроется при %2$lld ♥ — гладь, корми и играй, чтобы получать сердечки";

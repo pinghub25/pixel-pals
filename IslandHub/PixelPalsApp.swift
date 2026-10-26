@@ -24,6 +24,10 @@ struct PixelPalsApp: App {
             .id(model.language)
             .preferredColorScheme(.dark)
         }
+        // Wakes briefly around the pet's next expected mood change to refresh the island.
+        .backgroundTask(.appRefresh(PetModel.refreshTaskID)) {
+            await model.backgroundRefresh()
+        }
     }
 }
 

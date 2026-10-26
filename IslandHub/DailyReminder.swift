@@ -39,7 +39,7 @@ enum DailyReminder {
         content.title = String(localized: "\(profile.name) needs you", bundle: .app)
         content.body = need.line(name: profile.name)
         content.sound = .default
-        if let url = petImageFile(profile.pet),
+        if let url = petImageFile(profile.pet, accessory: profile.accessory),
            let attachment = try? UNNotificationAttachment(identifier: "pet", url: url) {
             content.attachments = [attachment]
         }
@@ -70,7 +70,7 @@ enum DailyReminder {
         content.title = "\(profile.name) · \(profile.sign.symbol) \(profile.sign.name)"
         content.body = message
         content.sound = .default
-        if let url = petImageFile(profile.pet),
+        if let url = petImageFile(profile.pet, accessory: profile.accessory),
            let attachment = try? UNNotificationAttachment(identifier: "pet", url: url) {
             content.attachments = [attachment]
         }
@@ -78,8 +78,8 @@ enum DailyReminder {
     }
 
     /// Renders the happy pose to a PNG. Each attachment needs its own file, since iOS moves it.
-    private static func petImageFile(_ pet: PetKind) -> URL? {
-        let renderer = ImageRenderer(content: PixelPetView(kind: pet, frame: 2).frame(width: 256, height: 256))
+    private static func petImageFile(_ pet: PetKind, accessory: Accessory? = nil) -> URL? {
+        let renderer = ImageRenderer(content: PixelPetView(kind: pet, frame: 2, accessory: accessory).frame(width: 256, height: 256))
         guard let data = renderer.uiImage?.pngData() else { return nil }
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("pet-\(UUID().uuidString).png")
         return (try? data.write(to: url)) != nil ? url : nil

@@ -13,6 +13,9 @@ A tiny pixel pet for your iPhone. Pick one of 8 pals, give it a name, take care 
 ## Features
 - **8 pixel pets** (cat, dog, bunny, frog, ghost, penguin, axolotl, dino) at 16×16, with blinking, happy wiggles and tap-for-hearts.
 - **Care:** Food, Fun and Energy drain over the day; Feed, Play and Nap with little animations. Daily streak and friendship hearts.
+- **Emotions:** happy, fine, hungry, bored, sleepy or sad (with a tear), from the care levels. Reactions (❤️, ⭐) after feeding, playing and petting.
+- **Accessories:** hearts unlock a bow, sunglasses, a party hat and a crown, worn in the app, the island and the widget.
+- **Lives in the Dynamic Island:** curious head tilt while you use the phone, falls asleep on the Always-On Lock Screen. Battery-friendly: no constant updates, just one background wake-up around each expected mood change.
 - **Daily content, your choice:** a message for your zodiac sign (240 per language), a classic quote, a light daily horoscope, your own messages, or a mix.
 - **Write your own messages** and they join the rotation.
 - **Dynamic Island & Lock Screen** Live Activity, **Home/Lock Screen widgets**, optional daily and care reminders.

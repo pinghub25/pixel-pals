@@ -62,6 +62,8 @@ struct PetStage: View {
     let actionStart: Date
     let need: PetNeed?
     let hearts: [Date]
+    var sad = false
+    var accessory: Accessory?
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 1.0 / 15)) { timeline in
@@ -141,10 +143,10 @@ struct PetStage: View {
         default:
             // A pet in need stops bouncing and wiggling.
             let wiggle = need == nil && PetMotion.isWiggling(t)
-            frame = wiggle ? 2 : PetMotion.idleFrame(t)
+            frame = sad ? (PetMotion.idleFrame(t) == 1 ? 1 : 3) : (wiggle ? 2 : PetMotion.idleFrame(t))
             hop = need != nil ? 0 : (wiggle ? PetMotion.wiggleHop(t) : PetMotion.bob(t))
         }
-        return PixelPetView(kind: kind, frame: frame)
+        return PixelPetView(kind: kind, frame: frame, accessory: accessory)
             .offset(y: -CGFloat(hop) * px)
             .opacity(active == .nap ? 0.85 : 1)
     }

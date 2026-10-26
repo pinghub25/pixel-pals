@@ -5,6 +5,7 @@ struct PetProfile: Codable, Equatable {
     var pet: PetKind
     var name: String
     var birthDate: Date
+    var accessory: Accessory? = nil
 
     var sign: ZodiacSign { ZodiacSign(birthDate: birthDate) }
 
@@ -52,5 +53,19 @@ struct PetAttributes: ActivityAttributes {
         var name: String
         var sign: ZodiacSign
         var message: String
+        // Optional so activities started by older versions still decode.
+        var mood: PetEmotion?
+        /// Shown until the content goes stale a few seconds later, then the island falls back to `mood`
+        /// by itself, with no extra update from the app.
+        var reaction: PetEmotion?
+        var food: Double?
+        var fun: Double?
+        var energy: Double?
+        var accessory: Accessory?
+
+        func emotion(isStale: Bool) -> PetEmotion {
+            if let reaction, !isStale { return reaction }
+            return mood ?? .content
+        }
     }
 }

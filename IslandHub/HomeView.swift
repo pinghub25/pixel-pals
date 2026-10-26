@@ -28,6 +28,7 @@ struct HomeView: View {
                         petStage(profile, care: care)
                         header(profile, care: care)
                         careCard(care)
+                        accessoriesCard(profile, love: care.love)
                         messageCard(profile)
                         settingsCard(profile)
                         if let error = model.errorText {
@@ -44,6 +45,8 @@ struct HomeView: View {
             }
             .sheet(isPresented: $editing) {
                 ProfileForm(title: "Your pal", buttonTitle: "Save", initial: profile) { updated in
+                    var updated = updated
+                    updated.accessory = profile.accessory  // the form doesn't edit accessories
                     model.save(updated)
                     editing = false
                 }
@@ -63,7 +66,7 @@ struct HomeView: View {
                 ))
                 .animation(.easeInOut(duration: 0.6), value: action)
             VStack(spacing: 8) {
-                PetStage(kind: profile.pet, action: action, actionStart: actionStart, need: care.need, hearts: hearts)
+                PetStage(kind: profile.pet, action: action, actionStart: actionStart, need: care.need, hearts: hearts, sad: care.emotion == .sad, accessory: profile.accessory)
                     .frame(width: 170, height: 170)
                     .contentShape(Rectangle())
                     .onTapGesture { pat() }
@@ -80,7 +83,7 @@ struct HomeView: View {
             Text(profile.name).font(.title.bold())
             Text("\(profile.sign.symbol) \(profile.sign.name) · \(profile.sign.element)")
                 .foregroundStyle(profile.pet.color)
-            Text(care.need?.line(name: profile.name) ?? String(localized: "\(profile.name) is feeling great", bundle: .app))
+            Text(care.emotion.line(name: profile.name))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             HStack(spacing: 16) {
@@ -89,6 +92,61 @@ struct HomeView: View {
             }
             .font(.footnote.weight(.semibold))
         }
+    }
+
+    /// Hearts unlock accessories; tap an unlocked one to wear it, tap again to take it off.
+    private func accessoriesCard(_ profile: PetProfile, love: Int) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Accessories").font(.headline)
+                Spacer()
+                Label("\(love)", systemImage: "heart.fill")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.pink)
+            }
+            HStack(spacing: 8) {
+                ForEach(Accessory.allCases) { accessory in
+                    let unlocked = love >= accessory.hearts
+                    let worn = profile.accessory == accessory
+                    Button {
+                        model.wear(worn ? nil : accessory)
+                    } label: {
+                        VStack(spacing: 4) {
+                            ZStack {
+                                PixelPetView(kind: profile.pet, accessory: accessory)
+                                    .frame(width: 48, height: 48)
+                                    .opacity(unlocked ? 1 : 0.25)
+                                if !unlocked {
+                                    Image(systemName: "lock.fill").foregroundStyle(.secondary)
+                                }
+                            }
+                            Text(unlocked ? accessory.title : "\(accessory.hearts) ♥")
+                                .font(.caption2)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.8)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .background(
+                            RoundedRectangle(cornerRadius: 14)
+                                .fill(worn ? profile.pet.color.opacity(0.25) : .white.opacity(0.04))
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 14)
+                                .stroke(worn ? profile.pet.color : .clear, lineWidth: 2)
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(!unlocked)
+                }
+            }
+            if let next = Accessory.allCases.first(where: { $0.hearts > love }) {
+                Text("\(next.title) unlocks at \(next.hearts) ♥ — pet, feed and play to earn hearts")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .card()
     }
 
     private func careCard(_ care: PetCare) -> some View {

@@ -27,7 +27,8 @@ struct PetProvider: TimelineProvider {
         let entries = (0..<48).map { step in
             let date = start.addingTimeInterval(Double(step) * 30 * 60)
             let projected = care.at(date)
-            let frame = projected.need != nil ? 1 : (step % 2 == 0 ? 0 : 2)
+            let emotion = projected.emotion
+            let frame = emotion == .happy || emotion == .content ? (step % 2 == 0 ? 0 : 2) : emotion.frame
             return PetEntry(date: date, profile: profile, care: projected, frame: frame)
         }
         completion(Timeline(entries: entries, policy: .atEnd))
@@ -78,7 +79,7 @@ struct PetWidgetView: View {
         switch family {
         case .accessoryRectangular:
             HStack(spacing: 6) {
-                PixelPetView(kind: profile.pet, frame: entry.frame)
+                PixelPetView(kind: profile.pet, frame: entry.frame, accessory: profile.accessory)
                     .frame(width: 36, height: 36)
                 Text(short)
                     .font(.caption)
@@ -87,7 +88,7 @@ struct PetWidgetView: View {
         case .systemMedium:
             HStack(spacing: 14) {
                 VStack(spacing: 6) {
-                    PixelPetView(kind: profile.pet, frame: entry.frame)
+                    PixelPetView(kind: profile.pet, frame: entry.frame, accessory: profile.accessory)
                         .frame(width: 84, height: 84)
                         .overlay(alignment: .topTrailing) { needBubble }
                     HStack(spacing: 3) {
@@ -110,7 +111,7 @@ struct PetWidgetView: View {
             }
         default:
             VStack(spacing: 6) {
-                PixelPetView(kind: profile.pet, frame: entry.frame)
+                PixelPetView(kind: profile.pet, frame: entry.frame, accessory: profile.accessory)
                     .frame(width: 60, height: 60)
                     .overlay(alignment: .topTrailing) { needBubble }
                 Text(entry.care.need?.line(name: profile.name) ?? short)
