@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=640" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1280px;
+        height: 640px;
+        overflow: hidden;
+        background: #17122b;
+      }
+      #root {
+        position: relative;
+        width: 1280px;
+        height: 640px;
+        overflow: hidden;
+        background: radial-gradient(90% 90% at 75% 10%, #3a2a6e 0%, #17122b 65%);
+        font-family: "Archivo Black", sans-serif;
+      }
+      .banner-star {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #fff6c8;
+        opacity: 0.5;
+      }
+      #banner-title {
+        position: absolute;
+        left: 80px;
+        top: 86px;
+        font-size: 118px;
+        line-height: 1;
+        color: #fff;
+      }
+      #banner-tagline {
+        position: absolute;
+        left: 84px;
+        top: 222px;
+        width: 680px;
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 1.25;
+        color: #d9d2ff;
+      }
+      #banner-chips {
+        position: absolute;
+        left: 84px;
+        top: 338px;
+        display: flex;
+        gap: 14px;
+      }
+      .banner-chip {
+        padding: 8px 20px 10px;
+        border-radius: 30px;
+        border: 3px solid #ffd23f;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 24px;
+        color: #ffd23f;
+      }
+      #banner-icon {
+        position: absolute;
+        left: 930px;
+        top: 70px;
+        width: 250px;
+        height: 250px;
+        border-radius: 56px;
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
+        transform: rotate(6deg);
+      }
+      #banner-ground {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 560px;
+        height: 80px;
+        background: #221a40;
+        border-top: 6px solid #2f2558;
+      }
+      #banner-pals {
+        position: absolute;
+        left: 140px;
+        top: 452px;
+        display: flex;
+        gap: 28px;
+      }
+      #banner-pals img {
+        width: 104px;
+        height: 104px;
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="banner" data-start="0" data-duration="1" data-width="1280" data-height="640" data-no-timeline>
+      <div class="banner-star" style="left: 40px; top: 40px"></div>
+      <div class="banner-star" style="left: 560px; top: 30px"></div>
+      <div class="banner-star" style="left: 840px; top: 380px"></div>
+      <div class="banner-star" style="left: 1230px; top: 360px"></div>
+      <div class="banner-star" style="left: 760px; top: 140px"></div>
+      <div class="banner-star" style="left: 30px; top: 420px"></div>
+
+      <div id="banner-title">Pixel Pals</div>
+      <div id="banner-tagline">A tiny pixel pet that lives in your iPhone's Dynamic Island</div>
+      <div id="banner-chips">
+        <div class="banner-chip">Dynamic Island</div>
+        <div class="banner-chip">Widgets</div>
+        <div class="banner-chip">8 pals</div>
+        <div class="banner-chip">EN · RU</div>
+      </div>
+      <img id="banner-icon" src="assets/app-icon.png" alt="Pixel Pals icon" />
+
+      <div id="banner-ground"></div>
+      <div id="banner-pals">
+        <img src="assets/cat-happy.png" alt="cat" />
+        <img src="assets/dog-crown.png" alt="dog" />
+        <img src="assets/bunny-happy.png" alt="bunny" />
+        <img src="assets/frog-happy.png" alt="frog" />
+        <img src="assets/ghost-happy.png" alt="ghost" />
+        <img src="assets/penguin-happy.png" alt="penguin" />
+        <img src="assets/axolotl-happy.png" alt="axolotl" />
+        <img src="assets/dino-happy.png" alt="dino" />
+      </div>
+    </div>
+  </body>
+</html>

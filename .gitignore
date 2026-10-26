@@ -19,3 +19,7 @@ promo-video/.hyperframes/
 promo-video/.thumbnails/
 promo-video/.waveform-cache/
 promo-video/renders/
+
+# Banner project caches
+press-kit/.hyperframes/
+press-kit/out/
