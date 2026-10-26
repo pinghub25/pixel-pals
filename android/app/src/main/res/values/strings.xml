@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Pixel Pals</string>
+    <string name="app_name">Pixel Zodiac</string>
     <string name="species_cat">Cat</string>
     <string name="species_dog">Dog</string>
     <string name="species_bunny">Bunny</string>
@@ -51,7 +51,7 @@
     <string name="pill_notification">Your pal is peeking beside the camera</string>
     <string name="channel_daily">Daily message</string>
     <string name="needs_you">%1$s needs you</string>
-    <string name="widget_adopt">Open Pixel Pals to adopt a pet</string>
+    <string name="widget_adopt">Open Pixel Zodiac to adopt a pet</string>
     <string name="widget_description">Your pet with today\'s message for your sign.</string>
     <string name="adopt_title">Adopt a pixel pal</string>
     <string name="adopt">Adopt</string>
@@ -93,6 +93,6 @@
     <string name="show_around_camera_hint">Peeks out beside the front camera over other apps. Needs “Display over other apps”.</string>
     <string name="calm_on_home_hint">Needs “Usage access” to tell the home screen from other apps.</string>
     <string name="tap_pal">Tap %1$s to open</string>
-    <string name="tap_pal_hint">Turn on Pixel Pals in Accessibility so the status bar stops catching the taps. Reads nothing on screen. Greyed out? App info → ⋮ → Allow restricted settings.</string>
-    <string name="tap_service_description">Lets your pal sit above the status bar so you can tap it. Pixel Pals reads nothing on your screen.</string>
+    <string name="tap_pal_hint">Turn on Pixel Zodiac in Accessibility so the status bar stops catching the taps. Reads nothing on screen. Greyed out? App info → ⋮ → Allow restricted settings.</string>
+    <string name="tap_service_description">Lets your pal sit above the status bar so you can tap it. Pixel Zodiac reads nothing on your screen.</string>
 </resources>

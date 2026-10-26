@@ -14,8 +14,8 @@ android {
         applicationId = "com.matsavin.pixelpals"
         minSdk = 29
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
     }
 
     // The release key stays on the maintainer's machine (~/.android), never in the repo. Without it
@@ -52,7 +52,7 @@ android {
         compose = true
     }
     androidResources {
-        // Lets Android 13+ offer the app's languages in Settings › Apps › Pixel Pals › Language.
+        // Lets Android 13+ offer the app's languages in Settings › Apps › Pixel Zodiac › Language.
         generateLocaleConfig = true
     }
 }

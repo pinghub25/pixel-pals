@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Archives Pixel Pals and uploads it to App Store Connect (it then shows up in TestFlight).
+# Archives Pixel Zodiac and uploads it to App Store Connect (it then shows up in TestFlight).
 #
 # Usage: tools/release.sh <TEAM_ID> <BUNDLE_ID>
 #   e.g. tools/release.sh ABCDE12345 com.yourname.pixelpals

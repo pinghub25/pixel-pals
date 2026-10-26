@@ -169,7 +169,7 @@ final class PetModel: ObservableObject {
         Task {
             if await !DailyReminder.scheduleCareAlert(profile: profile, need: next.need, at: next.date) {
                 careAlertsOn = false
-                errorText = String(localized: "Notifications are turned off for Pixel Pals in Settings.", bundle: .app)
+                errorText = String(localized: "Notifications are turned off for Pixel Zodiac in Settings.", bundle: .app)
             }
         }
     }
@@ -207,7 +207,7 @@ final class PetModel: ObservableObject {
     private func startIsland() {
         guard activity == nil, let state = islandState() else { return }
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
-            errorText = String(localized: "Live Activities are turned off in Settings › Pixel Pals.", bundle: .app)
+            errorText = String(localized: "Live Activities are turned off in Settings › Pixel Zodiac.", bundle: .app)
             return
         }
         do {
@@ -269,7 +269,7 @@ final class PetModel: ObservableObject {
         Task {
             if await !DailyReminder.schedule(profile: profile, minutes: minutes) {
                 reminderOn = false
-                errorText = String(localized: "Notifications are turned off for Pixel Pals in Settings.", bundle: .app)
+                errorText = String(localized: "Notifications are turned off for Pixel Zodiac in Settings.", bundle: .app)
             }
         }
     }

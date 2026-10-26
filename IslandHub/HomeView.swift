@@ -38,7 +38,7 @@ struct HomeView: View {
                     .padding()
                 }
             }
-            .navigationTitle("Pixel Pals")
+            .navigationTitle("Pixel Zodiac")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button("Edit") { editing = true }

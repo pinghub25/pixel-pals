@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Pixel Pals — a tiny pixel pet that lives in your iPhone's Dynamic Island" width="100%">
+  <img src="docs/banner.png" alt="Pixel Zodiac — a tiny pixel pet that lives in your iPhone's Dynamic Island" width="100%">
 </p>
 
 <p align="center">
@@ -93,7 +93,7 @@ Hearts from petting, feeding and playing unlock accessories. Your pal wears them
 Choose what you get: a note for your **zodiac sign** (240 of them), a **classic quote**, a light **daily horoscope**, **your own messages**, or a **mix** of all of them. It shows in the app, the island, the widget and an optional daily notification.
 
 ### 🌍 English and Русский
-Switch the language right in the app — the widget, island and notifications follow. On Android, also in **Settings › Apps › Pixel Pals › Language**.
+Switch the language right in the app — the widget, island and notifications follow. On Android, also in **Settings › Apps › Pixel Zodiac › Language**.
 
 ### 🔋 Battery-friendly and private
 No constant updates: the island changes only when something visible changes, with at most one quick background wake-up when your pal's mood is due to change (none in Low Power Mode). No accounts, ads or tracking — everything stays on your phone. On Android the pal redraws only while the screen is on and sleeps with it.
@@ -101,17 +101,17 @@ No constant updates: the island changes only when something visible changes, wit
 ## Install
 
 ### Android
-1. On your phone, download **Pixel-Pals.apk** from the [latest release](https://github.com/pinghub25/pixel-pals/releases/latest).
+1. On your phone, download **Pixel-Zodiac.apk** from the [latest release](https://github.com/pinghub25/pixel-pals/releases/latest).
 2. Open it and allow your browser to install apps when asked.
-3. Open Pixel Pals, adopt your pal, and turn on **Show … beside the camera**.
+3. Open Pixel Zodiac, adopt your pal, and turn on **Show … beside the camera**.
 
 Full guide with the optional tap setting: **[INSTALL.md › Android](INSTALL.md#install-pixel-pals-on-android)**. Needs Android 10 or newer.
 
 ### iPhone
-Pixel Pals isn't on the App Store yet. Install it for free with [AltStore](https://altstore.io):
+Pixel Zodiac isn't on the App Store yet. Install it for free with [AltStore](https://altstore.io):
 
 1. Set up AltStore on your iPhone once, using a Mac or Windows PC.
-2. Download **Pixel-Pals.ipa** from the [latest release](https://github.com/pinghub25/pixel-pals/releases/latest).
+2. Download **Pixel-Zodiac.ipa** from the [latest release](https://github.com/pinghub25/pixel-pals/releases/latest).
 3. Open it in AltStore → **My Apps** → **+**.
 
 Full step-by-step guide: **[INSTALL.md](INSTALL.md)** (English and Russian). Needs iOS 17 or newer.

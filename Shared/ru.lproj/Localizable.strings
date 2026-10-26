@@ -64,15 +64,15 @@
 "Tell me when %@ needs care" = "Сообщать, когда %@ нужна забота";
 "Send today's message now" = "Отправить послание сейчас";
 "Sent! Check your notifications" = "Отправлено! Проверь уведомления";
-"Live Activities are turned off in Settings › Pixel Pals." = "Live Activities выключены: Настройки › Pixel Pals.";
-"Notifications are turned off for Pixel Pals in Settings." = "Уведомления для Pixel Pals выключены в Настройках.";
+"Live Activities are turned off in Settings › Pixel Zodiac." = "Live Activities выключены: Настройки › Pixel Zodiac.";
+"Notifications are turned off for Pixel Zodiac in Settings." = "Уведомления для Pixel Zodiac выключены в Настройках.";
 "%@ needs you" = "%@ ждёт тебя";
 
 /* Island and widget */
 "A note from %@" = "Послание от %@";
-"Pixel Pal" = "Пиксельный друг";
+"Pixel Zodiac" = "Pixel Zodiac";
 "Your pet with today's message for your sign." = "Твой питомец и послание дня для твоего знака.";
-"Open Pixel Pals to adopt a pet" = "Открой Pixel Pals, чтобы завести питомца";
+"Open Pixel Zodiac to adopt a pet" = "Открой Pixel Zodiac, чтобы завести питомца";
 
 /* Language, daily content and my messages */
 "Language" = "Язык";

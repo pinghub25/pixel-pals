@@ -47,7 +47,7 @@ struct PetWidget: Widget {
                     )
                 }
         }
-        .configurationDisplayName("Pixel Pal")
+        .configurationDisplayName("Pixel Zodiac")
         .description("Your pet with today's message for your sign.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular])
     }
@@ -63,7 +63,7 @@ struct PetWidgetView: View {
         } else {
             VStack(spacing: 6) {
                 PixelPetView(kind: .cat, frame: 1).frame(width: 44, height: 44)
-                Text(String(localized: "Open Pixel Pals to adopt a pet", bundle: .app))
+                Text(String(localized: "Open Pixel Zodiac to adopt a pet", bundle: .app))
                     .font(.caption2)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)

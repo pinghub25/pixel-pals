@@ -222,7 +222,7 @@ class IslandService : Service() {
         } else {
             WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
         }
-        title = "Pixel Pals"
+        title = "Pixel Zodiac"
     }
 
     private fun layoutPill() {

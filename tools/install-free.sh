@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Builds Pixel Pals with a free Apple ID and installs it on a connected iPhone.
+# Builds Pixel Zodiac with a free Apple ID and installs it on a connected iPhone.
 # Free installs expire after 7 days; run this again to renew.
 # A free team can't use App Groups, so the entitlements are dropped (the widget can't see your pet).
 #

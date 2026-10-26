@@ -20,7 +20,7 @@ enum AppLanguage: String, CaseIterable, Identifiable {
         set { PetStore.defaults.set(newValue.rawValue, forKey: "language") }
     }
 
-    /// The localization actually used; "system" follows iOS (including Settings › Pixel Pals › Language).
+    /// The localization actually used; "system" follows iOS (including Settings › Pixel Zodiac › Language).
     var code: String {
         self == .system ? (Bundle.main.preferredLocalizations.first ?? "en") : rawValue
     }

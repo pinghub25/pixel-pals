@@ -1,8 +1,8 @@
-# Pixel Pals — Privacy Policy
+# Pixel Zodiac — Privacy Policy
 
 _Last updated: October 26, 2026_
 
-Pixel Pals does not collect, store on any server, share or sell any personal data.
+Pixel Zodiac does not collect, store on any server, share or sell any personal data.
 
 **What stays on your device.** Your pet's name, your birthday (used only to work out your zodiac sign), your pet's care levels, your settings and any messages you write are saved only on your iPhone, inside the app and its widget. They are never sent anywhere.
 
@@ -16,11 +16,11 @@ Pixel Pals does not collect, store on any server, share or sell any personal dat
 
 ---
 
-# Pixel Pals — Политика конфиденциальности
+# Pixel Zodiac — Политика конфиденциальности
 
 _Обновлено: 26 октября 2026 г._
 
-Pixel Pals не собирает, не хранит на серверах, не передаёт и не продаёт персональные данные.
+Pixel Zodiac не собирает, не хранит на серверах, не передаёт и не продаёт персональные данные.
 
 **Что хранится на устройстве.** Имя питомца, твой день рождения (нужен только для определения знака зодиака), показатели заботы, настройки и твои послания хранятся только на iPhone — в приложении и его виджете. Они никуда не отправляются.
 

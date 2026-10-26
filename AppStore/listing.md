@@ -1,11 +1,11 @@
 # App Store listing
 
 Paste these into App Store Connect → your app → App Information / the version page.
-The name must be unique across the whole App Store; "Pixel Pals" alone is probably taken, so the name below adds a tagline.
+The name must be unique across the whole App Store; "Pixel Zodiac" alone is probably taken, so the name below adds a tagline.
 
 ## English (U.S.)
 
-**Name** (30 max): Pixel Pals: Daily Pet Buddy
+**Name** (30 max): Pixel Zodiac: Daily Pet Buddy
 **Subtitle** (30 max): A tiny friend with good vibes
 
 **Promotional text** (170 max):
@@ -35,7 +35,7 @@ No accounts, no ads, no tracking. Everything stays on your iPhone.
 
 ## Русский
 
-**Название:** Pixel Pals: Пиксельный друг
+**Название:** Pixel Zodiac: Пиксельный друг
 **Подзаголовок:** Маленький друг на каждый день
 
 **Рекламный текст:**
@@ -66,4 +66,4 @@ Answer **"Data Not Collected"**: the app stores everything on the device and has
 All answers "None" → rated 4+.
 
 ## Review notes (paste into "Notes" for App Review)
-Pixel Pals is a virtual pet. The Live Activity shows the user's pet and today's message while the user chooses to keep it on (toggle on the home screen); it can be turned off at any time. No login is needed.
+Pixel Zodiac is a virtual pet. The Live Activity shows the user's pet and today's message while the user chooses to keep it on (toggle on the home screen); it can be turned off at any time. No login is needed.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Pixel Pals</string>
+    <string name="app_name">Pixel Zodiac</string>
     <string name="species_cat">Кот</string>
     <string name="species_dog">Пёс</string>
     <string name="species_bunny">Кролик</string>
@@ -51,7 +51,7 @@
     <string name="pill_notification">Твой друг выглядывает рядом с камерой</string>
     <string name="channel_daily">Ежедневное послание</string>
     <string name="needs_you">%1$s ждёт тебя</string>
-    <string name="widget_adopt">Открой Pixel Pals, чтобы завести питомца</string>
+    <string name="widget_adopt">Открой Pixel Zodiac, чтобы завести питомца</string>
     <string name="widget_description">Твой питомец и послание дня для твоего знака.</string>
     <string name="adopt_title">Заведи пиксельного друга</string>
     <string name="adopt">Забрать домой</string>
@@ -91,6 +91,6 @@
     <string name="show_around_camera_hint">Выглядывает рядом с фронтальной камерой поверх приложений. Нужно разрешение «Поверх других приложений».</string>
     <string name="calm_on_home_hint">Нужен «Доступ к истории использования», чтобы отличать главный экран от приложений.</string>
     <string name="tap_pal">Открывать %1$s нажатием</string>
-    <string name="tap_pal_hint">Включи Pixel Pals в Спец. возможностях, чтобы строка состояния не перехватывала нажатия. Ничего не читает с экрана. Неактивно? О приложении → ⋮ → Разрешить ограниченные настройки.</string>
-    <string name="tap_service_description">Позволяет другу сидеть над строкой состояния, чтобы его можно было нажать. Pixel Pals ничего не читает с экрана.</string>
+    <string name="tap_pal_hint">Включи Pixel Zodiac в Спец. возможностях, чтобы строка состояния не перехватывала нажатия. Ничего не читает с экрана. Неактивно? О приложении → ⋮ → Разрешить ограниченные настройки.</string>
+    <string name="tap_service_description">Позволяет другу сидеть над строкой состояния, чтобы его можно было нажать. Pixel Zodiac ничего не читает с экрана.</string>
 </resources>
