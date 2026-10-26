@@ -13,3 +13,9 @@ xcuserdata/
 *.xcuserstate
 
 .DS_Store
+
+# HyperFrames promo project: caches and render output (the final video lives in docs/promo.mp4)
+promo-video/.hyperframes/
+promo-video/.thumbnails/
+promo-video/.waveform-cache/
+promo-video/renders/

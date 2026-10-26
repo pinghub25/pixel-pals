@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #feel-card {
+      position: absolute;
+      left: 90px;
+      right: 90px;
+      top: 1040px;
+      padding: 40px 30px 44px;
+      border-radius: 48px;
+      background: rgba(23, 18, 43, 0.9);
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      color: #fff;
+    }
+    #feel-title {
+      font-size: 84px;
+      line-height: 1.05;
+    }
+    #feel-chips {
+      position: relative;
+      height: 76px;
+      margin-top: 22px;
+    }
+    .feel-chip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      font-size: 60px;
+      line-height: 76px;
+      color: #ffd23f;
+      opacity: 0;
+    }
+    .feel-heart {
+      position: absolute;
+      width: 84px;
+      height: 72px;
+      image-rendering: pixelated;
+      opacity: 0;
+    }
+  </style>
+  <div data-hf-id="hf-e9ii" id="root" data-composition-id="feelings" data-width="1080" data-height="1920">
+    <img data-hf-id="hf-zks6" id="feel-heart1" class="feel-heart" src="assets/heart.png" alt="" style="left: 380px; top: 470px" />
+    <img data-hf-id="hf-tor9" id="feel-heart2" class="feel-heart" src="assets/heart.png" alt="" style="left: 620px; top: 440px" />
+    <div data-hf-id="hf-xsi8" id="feel-card">
+      <div data-hf-id="hf-fd3o" id="feel-title" data-var-text="feel-title">It has feelings</div>
+      <div data-hf-id="hf-m5ij" id="feel-chips">
+        <div data-hf-id="hf-gdre" id="feel-happy" class="feel-chip">happy</div>
+        <div data-hf-id="hf-3ml0" id="feel-hungry" class="feel-chip">hungry</div>
+        <div data-hf-id="hf-nmx6" id="feel-sleepy" class="feel-chip">sleepy</div>
+        <div data-hf-id="hf-8lee" id="feel-sad" class="feel-chip">sad</div>
+        <div data-hf-id="hf-0hxz" id="feel-love" class="feel-chip">in love</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#feel-card", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
+    // Each word lands with the face swap in the phone scene (local time = film time - 2.5).
+    const chips = [
+      [0.1, "happy"],
+      [0.75, "hungry"],
+      [1.4, "sleepy"],
+      [2.05, "sad"],
+      [2.7, "love"],
+    ];
+    for (const [t, id] of chips) {
+      tl.set(".feel-chip", { opacity: 0 }, t);
+      tl.fromTo(
+        `#feel-${id}`,
+        { opacity: 1, scale: 0.7 },
+        { scale: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false },
+        t,
+      );
+    }
+    // In love: two hearts float up from Kuma.
+    tl.fromTo("#feel-heart1", { opacity: 1, y: 0 }, { opacity: 0, y: -220, duration: 0.8, ease: "power1.out", immediateRender: false }, 2.75);
+    tl.fromTo("#feel-heart2", { opacity: 1, y: 0 }, { opacity: 0, y: -240, duration: 0.8, ease: "power1.out", immediateRender: false }, 2.95);
+    tl.to("#feel-card", { opacity: 0, y: 20, duration: 0.2, ease: "power2.in" }, 3.3);
+    window.__timelines["feelings"] = tl;
+  </script>
+</template>

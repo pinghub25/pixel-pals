@@ -10,6 +10,8 @@ A tiny pixel pet for your iPhone. Pick one of 8 pals, give it a name, take care 
 <img src="docs/widget.png" width="240" alt="Home Screen widget">
 </p>
 
+▶️ **[Watch the 15-second promo](docs/promo.mp4)**
+
 ## Features
 - **8 pixel pets** (cat, dog, bunny, frog, ghost, penguin, axolotl, dino) at 16×16, with blinking, happy wiggles and tap-for-hearts.
 - **Care:** Food, Fun and Energy drain over the day; Feed, Play and Nap with little animations. Daily streak and friendship hearts.
@@ -47,3 +49,4 @@ Scripts in `tools/`:
 - `IslandHub/` — app screens and the model that keeps island, widget and notifications in sync
 - `IslandWidget/` — Dynamic Island / Lock Screen Live Activity and the Home Screen widget
 - `AppStore/` — store listing (EN/RU) and privacy policy
+- `promo-video/` — the promo video as a [HyperFrames](https://hyperframes.heygen.com) project; `python3 tools/make_assets.py` exports the sprites and soundtrack from the app, `npm run render` renders it

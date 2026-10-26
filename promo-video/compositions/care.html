@@ -1,0 +1,78 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    .care-prop {
+      position: absolute;
+      image-rendering: pixelated;
+      opacity: 0;
+    }
+    #care-card {
+      position: absolute;
+      left: 90px;
+      right: 90px;
+      top: 1040px;
+      padding: 40px 30px 46px;
+      border-radius: 48px;
+      background: rgba(23, 18, 43, 0.9);
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      color: #fff;
+      font-size: 84px;
+      line-height: 1.05;
+    }
+    #care-line2 {
+      color: #ffd23f;
+    }
+  </style>
+  <div data-hf-id="hf-jbpa" id="root" data-composition-id="care" data-width="1080" data-height="1920">
+    <img data-hf-id="hf-qhww" id="care-apple" class="care-prop" src="assets/apple.png" alt="" style="left: 484px; top: 380px; width: 112px; height: 112px" />
+    <img data-hf-id="hf-8ia7" id="care-ball" class="care-prop" src="assets/ball.png" alt="" style="left: 492px; top: 980px; width: 96px; height: 96px" />
+    <img data-hf-id="hf-esz5" id="care-heart1" class="care-prop" src="assets/heart.png" alt="" style="left: 360px; top: 470px; width: 84px; height: 72px" />
+    <img data-hf-id="hf-36oe" id="care-heart2" class="care-prop" src="assets/heart.png" alt="" style="left: 500px; top: 430px; width: 84px; height: 72px" />
+    <img data-hf-id="hf-05yq" id="care-heart3" class="care-prop" src="assets/heart.png" alt="" style="left: 640px; top: 470px; width: 84px; height: 72px" />
+    <div data-hf-id="hf-vn4h" id="care-card">
+      <div data-hf-id="hf-985z" id="care-line1" data-var-text="care-line1">Feed it. Play.</div>
+      <div data-hf-id="hf-z24d" id="care-line2" data-var-text="care-line2">Earn hearts.</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#care-card", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
+
+    // The apple drops into Rexie's mouth (lands at film 6.75, when the munching starts).
+    tl.fromTo(
+      "#care-apple",
+      { opacity: 1, y: -260 },
+      { y: 300, duration: 0.55, ease: "power2.in", immediateRender: false },
+      0.2,
+    );
+    tl.set("#care-apple", { opacity: 0 }, 0.75);
+
+    // The ball bounces side to side while Rexie hops (film 7.5–8.3).
+    tl.set("#care-ball", { opacity: 1 }, 1.45);
+    tl.fromTo(
+      "#care-ball",
+      { x: -220, y: 0 },
+      { x: 220, duration: 0.8, ease: "none", immediateRender: false },
+      1.45,
+    );
+    tl.fromTo(
+      "#care-ball",
+      { y: 0 },
+      { y: -90, duration: 0.2, ease: "power2.out", yoyo: true, repeat: 3, immediateRender: false },
+      1.45,
+    );
+    tl.set("#care-ball", { opacity: 0 }, 2.25);
+
+    // Hearts float up from Rexie (film 8.0, 8.4, 8.75).
+    [["#care-heart1", 2.0], ["#care-heart2", 2.4], ["#care-heart3", 2.75]].forEach(([id, t]) => {
+      tl.fromTo(id, { opacity: 1, y: 0 }, { opacity: 0, y: -240, duration: 0.6, ease: "power1.out", immediateRender: false }, t);
+    });
+
+    tl.to("#care-card", { opacity: 0, y: 20, duration: 0.2, ease: "power2.in" }, 2.8);
+    window.__timelines["care"] = tl;
+  </script>
+</template>

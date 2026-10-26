@@ -1,0 +1,48 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    .sleep-z {
+      position: absolute;
+      font-family: "Archivo Black", sans-serif;
+      color: #ffffff;
+      opacity: 0;
+    }
+    #sleep-card {
+      position: absolute;
+      left: 90px;
+      right: 90px;
+      top: 1040px;
+      padding: 40px 30px 46px;
+      border-radius: 48px;
+      background: rgba(23, 18, 43, 0.9);
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      color: #fff;
+      font-size: 84px;
+      line-height: 1.05;
+    }
+    #sleep-line2 {
+      color: #ffd23f;
+    }
+  </style>
+  <div data-hf-id="hf-dsiq" id="root" data-composition-id="sleep" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-78o0" id="sleep-z1" class="sleep-z" style="left: 760px; top: 520px; font-size: 64px">z</div>
+    <div data-hf-id="hf-z1fb" id="sleep-z2" class="sleep-z" style="left: 810px; top: 450px; font-size: 84px">z</div>
+    <div data-hf-id="hf-r1od" id="sleep-card">
+      <div data-hf-id="hf-ngrg" id="sleep-line1" data-var-text="sleep-line1">Sleeps when</div>
+      <div data-hf-id="hf-2d4e" id="sleep-line2" data-var-text="sleep-line2">your phone does</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#sleep-card", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 0);
+    // Two z's drift up from sleeping Kuma (in his crown) once the screen has dimmed.
+    tl.fromTo("#sleep-z1", { opacity: 0, y: 30 }, { opacity: 0.9, y: -20, duration: 0.45, ease: "sine.out", immediateRender: false }, 0.15);
+    tl.fromTo("#sleep-z2", { opacity: 0, y: 30 }, { opacity: 0.9, y: -30, duration: 0.45, ease: "sine.out", immediateRender: false }, 0.35);
+    tl.to("#sleep-card, .sleep-z", { opacity: 0, duration: 0.1, ease: "power2.in" }, 1.08);
+    window.__timelines["sleep"] = tl;
+  </script>
+</template>

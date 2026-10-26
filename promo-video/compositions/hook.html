@@ -1,0 +1,66 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #hook-ring {
+      position: absolute;
+      left: 222px;
+      top: 212px;
+      width: 636px;
+      height: 168px;
+      border-radius: 84px;
+      border: 8px solid #ffd23f;
+      opacity: 0;
+    }
+    #hook-card {
+      position: absolute;
+      left: 90px;
+      right: 90px;
+      top: 1040px;
+      padding: 40px 30px 46px;
+      border-radius: 48px;
+      background: rgba(23, 18, 43, 0.9);
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      color: #fff;
+    }
+    #hook-line1 {
+      font-size: 84px;
+      line-height: 1.05;
+    }
+    #hook-line2 {
+      font-size: 72px;
+      line-height: 1.05;
+      color: #ffd23f;
+    }
+  </style>
+  <div data-hf-id="hf-srfg" id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-tra3" id="hook-ring"></div>
+    <div data-hf-id="hf-v2mz" id="hook-card">
+      <div data-hf-id="hf-td7v" id="hook-line1" data-var-text="hook-line1">A tiny friend</div>
+      <div data-hf-id="hf-q9z8" id="hook-line2" data-var-text="hook-line2">lives in your island</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // The headline is already on frame 0 (the thumbnail); it settles with a small pop.
+    tl.fromTo("#hook-card", { scale: 0.94 }, { scale: 1, duration: 0.4, ease: "back.out(2.5)" }, 0);
+    // A ring pulses around the Dynamic Island to point at it.
+    tl.fromTo(
+      "#hook-ring",
+      { opacity: 0.95, scale: 1 },
+      { opacity: 0, scale: 1.18, duration: 0.8, ease: "power2.out" },
+      0.25,
+    );
+    tl.fromTo(
+      "#hook-ring",
+      { opacity: 0.95, scale: 1 },
+      { opacity: 0, scale: 1.18, duration: 0.8, ease: "power2.out", immediateRender: false },
+      1.2,
+    );
+    tl.to("#hook-card", { opacity: 0, y: 20, duration: 0.2, ease: "power2.in" }, 2.3);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

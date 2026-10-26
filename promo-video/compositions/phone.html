@@ -1,0 +1,202 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #phone-night {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(120% 70% at 50% 0%, #2c2152 0%, #17122b 60%);
+    }
+    .phone-star {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff6c8;
+      opacity: 0.55;
+    }
+    #phone-body {
+      position: absolute;
+      left: 90px;
+      top: 190px;
+      width: 900px;
+      height: 1880px;
+      border-radius: 124px;
+      border: 14px solid #2b2442;
+      overflow: hidden;
+      background: linear-gradient(180deg, #8fe3d0 0%, #5a93e6 45%, #3046a8 100%);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+    #phone-island {
+      position: absolute;
+      left: 136px;
+      top: 26px;
+      width: 600px;
+      height: 132px;
+      border-radius: 66px;
+      background: #000;
+    }
+    #phone-isl-pet {
+      position: absolute;
+      left: 24px;
+      top: 20px;
+      width: 92px;
+      height: 92px;
+    }
+    #phone-isl-tilt {
+      position: absolute;
+      inset: 0;
+    }
+    #phone-isl-sign {
+      position: absolute;
+      right: 40px;
+      top: 26px;
+      font: 64px/80px "Apple Symbols", "Arial Unicode MS", sans-serif;
+      color: #ed9e52;
+    }
+    #phone-big-pet {
+      position: absolute;
+      left: 210px;
+      top: 300px;
+      width: 480px;
+      height: 480px;
+    }
+    .phone-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+      opacity: 0;
+    }
+    #phone-dim {
+      position: absolute;
+      inset: 0;
+      background: #05040c;
+      opacity: 0;
+    }
+  </style>
+  <div data-hf-id="hf-hom9" id="root" data-composition-id="phone" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-56tu" id="phone-night">
+      <div data-hf-id="hf-srf2" class="phone-star" style="left: 70px; top: 90px"></div>
+      <div data-hf-id="hf-cfuf" class="phone-star" style="left: 300px; top: 40px"></div>
+      <div data-hf-id="hf-su74" class="phone-star" style="left: 760px; top: 70px"></div>
+      <div data-hf-id="hf-64wz" class="phone-star" style="left: 980px; top: 130px"></div>
+      <div data-hf-id="hf-cwjg" class="phone-star" style="left: 30px; top: 520px"></div>
+      <div data-hf-id="hf-23g9" class="phone-star" style="left: 1030px; top: 760px"></div>
+    </div>
+
+    <!-- The phone runs off the bottom of the frame on purpose. -->
+    <div data-hf-id="hf-x975" id="phone-body" data-layout-allow-overflow>
+      <div data-hf-id="hf-emsu" id="phone-big-pet">
+        <img id="big-cat-happy" class="phone-face" src="assets/cat-happy.png" alt="" style="opacity: 1" />
+        <img id="big-frog-happy" class="phone-face" src="assets/frog-happy.png" alt="" />
+        <img id="big-dog-idle" class="phone-face" src="assets/dog-idle.png" alt="" />
+        <img id="big-penguin-blink" class="phone-face" src="assets/penguin-blink.png" alt="" />
+        <img id="big-bunny-sad" class="phone-face" src="assets/bunny-sad.png" alt="" />
+        <img id="big-axolotl-happy" class="phone-face" src="assets/axolotl-happy.png" alt="" />
+        <img id="big-dino-idle" class="phone-face" src="assets/dino-idle.png" alt="" />
+        <img id="big-dino-happy" class="phone-face" src="assets/dino-happy.png" alt="" />
+        <img id="big-bunny-bow" class="phone-face" src="assets/bunny-bow.png" alt="" />
+        <img id="big-frog-sunglasses" class="phone-face" src="assets/frog-sunglasses.png" alt="" />
+        <img id="big-ghost-partyhat" class="phone-face" src="assets/ghost-partyhat.png" alt="" />
+        <img id="big-dog-crown" class="phone-face" src="assets/dog-crown.png" alt="" />
+        <img id="big-dog-crown-blink" class="phone-face" src="assets/dog-crown-blink.png" alt="" />
+      </div>
+
+      <div data-hf-id="hf-27ui" id="phone-dim"></div>
+
+      <!-- The Dynamic Island, drawn at about 3.6x so it reads on a phone screen. -->
+      <div data-hf-id="hf-m4un" id="phone-island">
+        <div data-hf-id="hf-9oz4" id="phone-isl-pet">
+          <div data-hf-id="hf-9qec" id="phone-isl-tilt">
+            <img id="isl-cat-happy" class="phone-face" src="assets/cat-happy.png" alt="" style="opacity: 1" />
+            <img id="isl-frog-happy" class="phone-face" src="assets/frog-happy.png" alt="" />
+            <img id="isl-dog-idle" class="phone-face" src="assets/dog-idle.png" alt="" />
+            <img id="isl-penguin-blink" class="phone-face" src="assets/penguin-blink.png" alt="" />
+            <img id="isl-bunny-sad" class="phone-face" src="assets/bunny-sad.png" alt="" />
+            <img id="isl-axolotl-happy" class="phone-face" src="assets/axolotl-happy.png" alt="" />
+            <img id="isl-dino-idle" class="phone-face" src="assets/dino-idle.png" alt="" />
+            <img id="isl-dino-happy" class="phone-face" src="assets/dino-happy.png" alt="" />
+            <img id="isl-bunny-bow" class="phone-face" src="assets/bunny-bow.png" alt="" />
+            <img id="isl-frog-sunglasses" class="phone-face" src="assets/frog-sunglasses.png" alt="" />
+            <img id="isl-ghost-partyhat" class="phone-face" src="assets/ghost-partyhat.png" alt="" />
+            <img id="isl-dog-crown" class="phone-face" src="assets/dog-crown.png" alt="" />
+            <img id="isl-dog-crown-blink" class="phone-face" src="assets/dog-crown-blink.png" alt="" />
+          </div>
+        </div>
+        <div data-hf-id="hf-gj7o" id="phone-isl-sign">♌&#xFE0E;</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // A different pal on each beat; the island and the big pet always match.
+    // [time, face, pop?] — the pops line up with the soundtrack's blips.
+    const faces = [
+      [0.15, "cat-happy", true], // hook: Mochi the cat
+      [2.6, "frog-happy", true], // feelings: happy
+      [3.25, "dog-idle", true], // hungry
+      [3.9, "penguin-blink", true], // sleepy
+      [4.55, "bunny-sad", true], // sad
+      [5.2, "axolotl-happy", true], // in love
+      [6.0, "dino-idle", true], // care: Rexie the dino munches and plays
+      [6.75, "dino-happy", false],
+      [6.9, "dino-idle", false],
+      [7.05, "dino-happy", false],
+      [7.2, "dino-idle", false],
+      [7.35, "dino-happy", false],
+      [9.25, "bunny-bow", true], // outfits
+      [9.85, "frog-sunglasses", true],
+      [10.45, "ghost-partyhat", true],
+      [11.05, "dog-crown", true], // Kuma in his crown...
+      [11.5, "dog-crown-blink", false], // ...falls asleep with the phone
+    ];
+    const allFaces = "#phone-big-pet .phone-face, #phone-isl-tilt .phone-face";
+    // The opening face is also set in the markup, so frame 0 (the thumbnail) already shows Kuma.
+    for (const [t, face, pop] of faces) {
+      // Nothing to swap at 0: the markup already shows the opening face, and stacked sets at
+      // exactly 0 don't replay when the renderer seeks there.
+      if (t > 0) {
+        tl.set(allFaces, { opacity: 0 }, t);
+        tl.set(`#big-${face}, #isl-${face}`, { opacity: 1 }, t);
+      }
+      if (pop) {
+        tl.fromTo(
+          "#phone-big-pet, #phone-isl-pet",
+          { scale: 0.72 },
+          { scale: 1, duration: 0.4, ease: "back.out(3)", immediateRender: false },
+          t,
+        );
+      }
+    }
+
+    // Curious head tilt in the island while the phone is in use; level when sad or asleep.
+    tl.set("#phone-isl-tilt", { rotation: -10 }, 0);
+    tl.set("#phone-isl-tilt", { rotation: 0 }, 4.55);
+    tl.set("#phone-isl-tilt", { rotation: -10 }, 5.2);
+    tl.set("#phone-isl-tilt", { rotation: 0 }, 11.5);
+
+    // Gentle idle bob during the hook, a hop while playing ball.
+    tl.fromTo(
+      "#phone-big-pet",
+      { y: 0 },
+      { y: -16, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false },
+      0.3,
+    );
+    tl.fromTo(
+      "#phone-big-pet",
+      { y: 0 },
+      { y: -70, duration: 0.2, ease: "power2.out", yoyo: true, repeat: 3, immediateRender: false },
+      7.5,
+    );
+
+    // The phone goes to sleep: the screen dims to Always-On and Kuma closes its eyes.
+    tl.fromTo("#phone-dim", { opacity: 0 }, { opacity: 0.6, duration: 0.4, ease: "power2.inOut" }, 11.45);
+
+    window.__timelines["phone"] = tl;
+  </script>
+</template>

@@ -1,0 +1,107 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #end-ground {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(90% 60% at 50% 40%, #2c2152 0%, #17122b 70%);
+    }
+    #end-icon {
+      position: absolute;
+      left: 390px;
+      top: 470px;
+      width: 300px;
+      height: 300px;
+      border-radius: 68px;
+      image-rendering: pixelated;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+    #end-wordmark {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 820px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 124px;
+      line-height: 1;
+      color: #fff;
+    }
+    #end-cta {
+      position: absolute;
+      left: 190px;
+      right: 190px;
+      top: 1010px;
+      padding: 26px 20px 30px;
+      border-radius: 60px;
+      background: #ffd23f;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      color: #17122b;
+      font-size: 54px;
+      line-height: 1.05;
+    }
+    #end-url {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1170px;
+      text-align: center;
+      font-family: "Nunito", sans-serif;
+      font-weight: 800;
+      font-size: 40px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    #end-pals {
+      position: absolute;
+      left: 93px;
+      top: 1230px;
+      width: 894px;
+      height: 96px;
+    }
+    .end-pal {
+      position: absolute;
+      top: 0;
+      width: 96px;
+      height: 96px;
+      image-rendering: pixelated;
+    }
+  </style>
+  <div data-hf-id="hf-00mi" id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-fwzw" id="end-ground"></div>
+    <img data-hf-id="hf-aj1k" id="end-icon" src="assets/app-icon.png" alt="Pixel Pals icon" />
+    <div data-hf-id="hf-wuaw" id="end-wordmark" data-var-text="end-wordmark">Pixel Pals</div>
+    <div data-hf-id="hf-d1bo" id="end-cta" data-var-text="end-cta">Free on GitHub</div>
+    <div data-hf-id="hf-znmf" id="end-url" data-var-text="end-url">github.com/pinghub25/pixel-pals</div>
+    <div id="end-pals">
+      <img id="end-pal-cat" class="end-pal" src="assets/cat-happy.png" alt="" style="left: 0px" />
+      <img id="end-pal-dog" class="end-pal" src="assets/dog-happy.png" alt="" style="left: 114px" />
+      <img id="end-pal-bunny" class="end-pal" src="assets/bunny-happy.png" alt="" style="left: 228px" />
+      <img id="end-pal-frog" class="end-pal" src="assets/frog-happy.png" alt="" style="left: 342px" />
+      <img id="end-pal-ghost" class="end-pal" src="assets/ghost-happy.png" alt="" style="left: 456px" />
+      <img id="end-pal-penguin" class="end-pal" src="assets/penguin-happy.png" alt="" style="left: 570px" />
+      <img id="end-pal-axolotl" class="end-pal" src="assets/axolotl-happy.png" alt="" style="left: 684px" />
+      <img id="end-pal-dino" class="end-pal" src="assets/dino-happy.png" alt="" style="left: 798px" />
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // The icon pops in with the end chord (film 12.7); every line is up within 0.35 s so it reads for 2 s.
+    tl.fromTo("#end-ground", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, 0);
+    tl.fromTo("#end-icon", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo(
+      "#end-wordmark",
+      { clipPath: "inset(0 100% 0 0)" },
+      { clipPath: "inset(0 0% 0 0)", duration: 0.3, ease: "power3.out" },
+      0.22,
+    );
+    tl.fromTo("#end-cta", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 0.25);
+    tl.fromTo("#end-url", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 0.28);
+    // All eight pals hop in one after another under the link.
+    tl.fromTo(".end-pal", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(3)", stagger: 0.06 }, 0.4);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

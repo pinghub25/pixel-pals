@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #outfit-card {
+      position: absolute;
+      left: 90px;
+      right: 90px;
+      top: 1040px;
+      padding: 40px 30px 44px;
+      border-radius: 48px;
+      background: rgba(23, 18, 43, 0.9);
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      color: #fff;
+    }
+    #outfit-title {
+      font-size: 84px;
+      line-height: 1.05;
+    }
+    #outfit-chips {
+      position: relative;
+      height: 76px;
+      margin-top: 22px;
+    }
+    .outfit-chip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      font-size: 56px;
+      line-height: 76px;
+      color: #ffd23f;
+      opacity: 0;
+    }
+    .outfit-chip img {
+      width: 49px;
+      height: 42px;
+      image-rendering: pixelated;
+      vertical-align: -2px;
+      margin-left: 10px;
+    }
+  </style>
+  <div data-hf-id="hf-iq5t" id="root" data-composition-id="outfits" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-d7m3" id="outfit-card">
+      <div data-hf-id="hf-yz35" id="outfit-title" data-var-text="outfit-title">Unlock cute outfits</div>
+      <div data-hf-id="hf-r9iu" id="outfit-chips">
+        <div data-hf-id="hf-f8gu" id="outfit-bow" class="outfit-chip">Bow · 10<img data-hf-id="hf-i8kn" src="assets/heart.png" alt="" /></div>
+        <div data-hf-id="hf-kf06" id="outfit-sunglasses" class="outfit-chip">Sunglasses · 25<img data-hf-id="hf-devb" src="assets/heart.png" alt="" /></div>
+        <div data-hf-id="hf-cgp6" id="outfit-partyhat" class="outfit-chip">Party hat · 50<img data-hf-id="hf-8yl6" src="assets/heart.png" alt="" /></div>
+        <div data-hf-id="hf-5s3a" id="outfit-crown" class="outfit-chip">Crown · 100<img data-hf-id="hf-8ka5" src="assets/heart.png" alt="" /></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#outfit-card", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
+    // Each item name lands with Kuma putting it on (film 9.25, 9.85, 10.45, 11.05).
+    [[0.25, "bow"], [0.85, "sunglasses"], [1.45, "partyhat"], [2.05, "crown"]].forEach(([t, id]) => {
+      tl.set(".outfit-chip", { opacity: 0 }, t);
+      tl.fromTo(
+        `#outfit-${id}`,
+        { opacity: 1, scale: 0.7 },
+        { scale: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false },
+        t,
+      );
+    });
+    tl.to("#outfit-card", { opacity: 0, y: 20, duration: 0.15, ease: "power2.in" }, 2.25);
+    window.__timelines["outfits"] = tl;
+  </script>
+</template>

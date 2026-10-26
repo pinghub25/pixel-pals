@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #17122b;
+        --ink: #ffffff;
+        --kuma: #ed9e52;
+        --font-display: "Archivo Black", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-qv3y"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="15"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- The phone, its Dynamic Island and the big pet run under every beat until the end card. -->
+      <div data-hf-id="hf-ebb6"
+        id="phone"
+        data-composition-id="phone"
+        data-composition-src="compositions/phone.html"
+        data-start="0"
+        data-duration="13"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 1"
+       data-playback-start="0"></div>
+
+      <div data-hf-id="hf-ka4b"
+        id="hook"
+        data-composition-id="hook"
+        data-composition-src="compositions/hook.html"
+        data-start="0"
+        data-duration="2.5"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+      <div data-hf-id="hf-5yex"
+        id="feelings"
+        data-composition-id="feelings"
+        data-composition-src="compositions/feelings.html"
+        data-start="2.5"
+        data-duration="3.5"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+      <div data-hf-id="hf-cjy5"
+        id="care"
+        data-composition-id="care"
+        data-composition-src="compositions/care.html"
+        data-start="6"
+        data-duration="3"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+      <div data-hf-id="hf-nzda"
+        id="outfits"
+        data-composition-id="outfits"
+        data-composition-src="compositions/outfits.html"
+        data-start="9"
+        data-duration="2.4"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+      <div data-hf-id="hf-nnor"
+        id="sleep"
+        data-composition-id="sleep"
+        data-composition-src="compositions/sleep.html"
+        data-start="11.4"
+        data-duration="1.6"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+       data-playback-start="0"></div>
+      <div data-hf-id="hf-9yk7"
+        id="endcard"
+        data-composition-id="endcard"
+        data-composition-src="compositions/endcard.html"
+        data-start="12.6"
+        data-duration="2.4"
+        data-track-index="3"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 3"
+      ></div>
+
+      <audio data-hf-id="hf-v1yr"
+        id="music"
+        class="clip"
+        src="assets/chiptune.wav"
+        data-start="0"
+        data-duration="15"
+        data-track-index="4"
+        data-volume="0.8"
+      ></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
