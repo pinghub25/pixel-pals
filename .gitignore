@@ -23,3 +23,10 @@ promo-video/renders/
 # Banner project caches
 press-kit/.hyperframes/
 press-kit/out/
+
+# Android build output and machine-specific SDK path
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.kotlin/

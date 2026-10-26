@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PixelPals" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/ink</item>
+    </style>
+
+    <!-- Splash: the three pals on the app's ink colour, then the app. -->
+    <style name="Theme.PixelPals.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ink</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.PixelPals</item>
+    </style>
+
+    <color name="ink">#0E0B1C</color>
+</resources>

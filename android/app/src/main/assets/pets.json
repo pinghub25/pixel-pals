@@ -1,0 +1,233 @@
+{
+ "cat": {
+  "base": [
+   "................",
+   "..KK........KK..",
+   "..KBK......KBK..",
+   "..KBPK....KPBK..",
+   "..KBBBKKKKBBBK..",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBEWBBBBEWBBK.",
+   ".KBBEEBBBBEEBBK.",
+   ".KBPBBKBBKBBPBK.",
+   ".KBBBBBKKBBBBBK.",
+   "..KBBBBBBBBBBK..",
+   "..KBLLLLLLLLBK..",
+   "..KBLLLLLLLLBK..",
+   "..KBBKBBBBKBBK..",
+   "...KK.KKKK.KK..."
+  ],
+  "blink": {
+   "7": ".KBBBBBBBBBBBBK.",
+   "8": ".KBBKKBBBBKKBBK."
+  },
+  "happy": {
+   "7": ".KBBKKBBBBKKBBK.",
+   "8": ".KBKBBKBBKBBKBK.",
+   "9": ".KBPBKBBBBKBPBK.",
+   "10": ".KBBBBKRRKBBBBK."
+  }
+ },
+ "dog": {
+  "base": [
+   "................",
+   "..KK........KK..",
+   ".KBBK......KBBK.",
+   ".KBDBK....KBDBK.",
+   ".KBBBBKKKKBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   "KBBBBBBBBBBBBBBK",
+   "KBBEWBBBBBBEWBBK",
+   "KBBEEBLLLLBEEBBK",
+   "KBBBBLLKKLLBBBBK",
+   ".KBBBLKLLKLBBBK.",
+   ".KBPBLLKKLLBPBK.",
+   "..KBBBBBBBBBBK..",
+   "..KBBLLLLLLBBK..",
+   "..KBBKBBBBKBBK..",
+   "...KK.KKKK.KK..."
+  ],
+  "blink": {
+   "7": "KBBBBBBBBBBBBBBK",
+   "8": "KBBKKBLLLLBKKBBK"
+  },
+  "happy": {
+   "7": "KBBKKBBBBBBKKBBK",
+   "8": "KBKBBKLLLLKBBKBK",
+   "11": ".KBPBLKRRKLBPBK."
+  }
+ },
+ "bunny": {
+  "base": [
+   "....KK....KK....",
+   "...KBBK..KBBK...",
+   "...KBPK..KPBK...",
+   "...KBPK..KPBK...",
+   "...KBBK..KBBK...",
+   "..KBBBBKKBBBBK..",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBEWBBBBEWBBK.",
+   ".KBBEEBBBBEEBBK.",
+   ".KBPBBBRRBBBPBK.",
+   ".KBBBBKBBKBBBBK.",
+   "..KBBBBKKBBBBK..",
+   "..KBLLLLLLLLBK..",
+   "..KBBKBBBBKBBK..",
+   "...KK.KKKK.KK..."
+  ],
+  "blink": {
+   "8": ".KBBBBBBBBBBBBK.",
+   "9": ".KBBKKBBBBKKBBK."
+  },
+  "happy": {
+   "8": ".KBBKKBBBBKKBBK.",
+   "9": ".KBKBBKBBKBBKBK.",
+   "11": ".KBBBBKRRKBBBBK."
+  }
+ },
+ "frog": {
+  "base": [
+   "................",
+   "..KKKK....KKKK..",
+   ".KWWWWK..KWWWWK.",
+   ".KWEWWK..KWEWWK.",
+   ".KWEEWKKKKWEEWK.",
+   ".KBWWBBBBBBWWBK.",
+   "KBBBBBBBBBBBBBBK",
+   "KBBBBBBBBBBBBBBK",
+   "KBPPBBBBBBBBPPBK",
+   "KBBKBBBBBBBBKBBK",
+   "KBBBKKKKKKKKBBBK",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBLLLLLLLLBBK.",
+   "..KBLLLLLLLLBK..",
+   ".KDDKBBBBBBKDDK.",
+   ".KKK.KKKKKK.KKK."
+  ],
+  "blink": {
+   "3": ".KWWWWK..KWWWWK.",
+   "4": ".KEEEEKKKKEEEEK."
+  },
+  "happy": {
+   "9": "KBKBBBBBBBBBBKBK",
+   "10": "KBBKKRRRRRRKKBBK"
+  }
+ },
+ "ghost": {
+  "base": [
+   ".....KKKKKK.....",
+   "...KKBBBBBBKK...",
+   "..KBBBBBBBBBBK..",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBEWBBBBEWBBK.",
+   ".KBBEEBBBBEEBBK.",
+   ".KBPBBBBBBBBPBK.",
+   ".KBBBBKBBKBBBBK.",
+   ".KBBBBBKKBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBBBBBBBBBBBK.",
+   ".KBBK.KBBK.KBBK.",
+   "..KK...KK...KK.."
+  ],
+  "blink": {
+   "5": ".KBBBBBBBBBBBBK."
+  },
+  "happy": {
+   "5": ".KBBKKBBBBKKBBK.",
+   "6": ".KBKBBKBBKBBKBK.",
+   "8": ".KBBBKBBBBKBBBK.",
+   "9": ".KBBBBKRRKBBBBK."
+  }
+ },
+ "penguin": {
+  "base": [
+   "................",
+   ".....KKKKKK.....",
+   "....KBBBBBBK....",
+   "...KBBBBBBBBK...",
+   "...KBWWBBWWBK...",
+   "..KBWEWWWWEWBK..",
+   "..KBWWWOOWWWBK..",
+   "..KBWPWWWWPWBK..",
+   ".KBBWWWWWWWWBBK.",
+   ".KBWWWWWWWWWWBK.",
+   "KBBWWWWWWWWWWBBK",
+   "KBKWWWWWWWWWWKBK",
+   ".K.KWWWWWWWWK.K.",
+   "...KWWWWWWWWK...",
+   "...KOOKKKKOOK...",
+   "....KK....KK...."
+  ],
+  "blink": {
+   "5": "..KBKKWWWWKKBK.."
+  },
+  "happy": {
+   "4": "...KBWKBBKWBK...",
+   "5": "..KBKWKWWKWKBK..",
+   "6": "..KBWWWRRWWWBK.."
+  }
+ },
+ "axolotl": {
+  "base": [
+   "................",
+   "................",
+   ".G............G.",
+   "GKG..KKKKKK..GKG",
+   ".GKGKBBBBBBKGKG.",
+   "GKGKBBBBBBBBKGKG",
+   ".GKBBBBBBBBBBKG.",
+   "..KBEWBBBBEWBK..",
+   "..KBEEBBBBEEBK..",
+   "..KPBBKBBKBBPK..",
+   "..KBBBBKKBBBBK..",
+   "...KBLLLLLLBK...",
+   "...KBLLLLLLBK...",
+   "..KBBBBBBBBBBK..",
+   "..KBK.KBBK.KBK..",
+   "...K...KK...K..."
+  ],
+  "blink": {
+   "7": "..KBBBBBBBBBBK..",
+   "8": "..KBKKBBBBKKBK.."
+  },
+  "happy": {
+   "7": "..KBKKBBBBKKBK..",
+   "8": "..KKBBKBBKBBKK..",
+   "9": "..KPBBKRRKBBPK.."
+  }
+ },
+ "dino": {
+  "base": [
+   ".......KK.......",
+   "......KDDK......",
+   "....KKKBBKKK....",
+   "...KBBBBBBBBK...",
+   "..KBBBBBBBBBBK..",
+   "..KBEWBBBBEWBK..",
+   "..KBEEBBBBEEBK..",
+   ".KDPBBBBBBBBPDK.",
+   ".KBBBKBBBBKBBBK.",
+   ".KBBBBKKKKBBBBK.",
+   "..KBBBBBBBBBBK..",
+   "..KBLLLLLLLLBK..",
+   ".KBBLLLLLLLLBBK.",
+   ".KBBLLLLLLLLBBK.",
+   "..KBBK....KBBK..",
+   "..KKKK....KKKK.."
+  ],
+  "blink": {
+   "5": "..KBBBBBBBBBBK..",
+   "6": "..KBKKBBBBKKBK.."
+  },
+  "happy": {
+   "5": "..KBKKBBBBKKBK..",
+   "6": "..KKBBKBBKBBKK..",
+   "9": ".KBBBKRRRRKBBBK."
+  }
+ }
+}

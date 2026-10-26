@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://github.com/pinghub25/pixel-pals/releases/latest"><img src="https://img.shields.io/github/v/release/pinghub25/pixel-pals?label=release&color=ffd23f" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/iOS-17%2B-000000?logo=apple&logoColor=white" alt="iOS 17+">
+  <img src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" alt="Android 10+">
   <img src="https://img.shields.io/badge/Swift-SwiftUI-F05138?logo=swift&logoColor=white" alt="Swift and SwiftUI">
   <img src="https://img.shields.io/badge/Dynamic%20Island-Live%20Activity-6b4fd8" alt="Dynamic Island Live Activity">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/pinghub25/pixel-pals?color=2ea44f" alt="MIT license"></a>
@@ -12,12 +13,13 @@
 
 <p align="center">
   <b>Feed it, play with it, dress it up — and get a kind message every day.</b><br>
-  Your pal lives in the Dynamic Island, shows how it feels, and falls asleep when your phone does.
+  Your pal lives in the Dynamic Island — or beside the camera on Android — shows how it feels, and falls asleep when your phone does.
 </p>
 
 <p align="center">
   <a href="https://github.com/pinghub25/pixel-pals/releases/latest"><b>⬇️ Download</b></a> &nbsp;·&nbsp;
-  <a href="INSTALL.md"><b>📲 How to install</b></a> &nbsp;·&nbsp;
+  <a href="INSTALL.md"><b>📲 Install on iPhone</b></a> &nbsp;·&nbsp;
+  <a href="INSTALL.md#install-pixel-pals-on-android"><b>🤖 Install on Android</b></a> &nbsp;·&nbsp;
   <a href="docs/promo.mp4"><b>▶️ Promo video</b></a> &nbsp;·&nbsp;
   <a href="INSTALL.md#как-установить-pixel-pals-на-iphone"><b>🇷🇺 По-русски</b></a>
 </p>
@@ -54,6 +56,11 @@ Pick one, give it any name, and enter your birthday — that sets your zodiac si
 ### 🏝 Lives in your Dynamic Island
 Your pal sits in the island with your zodiac sign beside it. It **tilts its head curiously** while you use your phone, reacts with ❤️ or ⭐ when you feed it or play, and **falls asleep on the Always-On Lock Screen**. Long-press the island for its mood, today's message and its care bars.
 
+### 🤖 Peeks out beside the camera on Android
+On Android (made for the Pixel 7, works on any phone with Android 10+), your pal sits right beside the front camera, over every app. Tap it — or **Peek** in its notification — for a card with its mood, today's message and care bars; tap the pet in the card to pat it. It hides in fullscreen videos and games and in landscape.
+
+<p align="center"><img src="docs/android.png" width="420" alt="The pal peeking beside the camera on a Pixel 7, and its card"></p>
+
 ### 💛 Has feelings
 
 <table>
@@ -80,19 +87,27 @@ Food, Fun and Energy slowly drain through the day. Your pal is happy, fine, hung
   </tr>
 </table>
 
-Hearts from petting, feeding and playing unlock accessories. Your pal wears them in the app, the Dynamic Island and the widget.
+Hearts from petting, feeding and playing unlock accessories. Your pal wears them in the app, the Dynamic Island (or beside the camera) and the widget.
 
 ### ✨ A kind message every day
 Choose what you get: a note for your **zodiac sign** (240 of them), a **classic quote**, a light **daily horoscope**, **your own messages**, or a **mix** of all of them. It shows in the app, the island, the widget and an optional daily notification.
 
 ### 🌍 English and Русский
-Switch the language right in the app — the widget, island and notifications follow.
+Switch the language right in the app — the widget, island and notifications follow. On Android, also in **Settings › Apps › Pixel Pals › Language**.
 
 ### 🔋 Battery-friendly and private
-No constant updates: the island changes only when something visible changes, with at most one quick background wake-up when your pal's mood is due to change (none in Low Power Mode). No accounts, ads or tracking — everything stays on your iPhone.
+No constant updates: the island changes only when something visible changes, with at most one quick background wake-up when your pal's mood is due to change (none in Low Power Mode). No accounts, ads or tracking — everything stays on your phone. On Android the pal redraws only while the screen is on and sleeps with it.
 
 ## Install
 
+### Android
+1. On your phone, download **Pixel-Pals.apk** from the [latest release](https://github.com/pinghub25/pixel-pals/releases/latest).
+2. Open it and allow your browser to install apps when asked.
+3. Open Pixel Pals, adopt your pal, and turn on **Show … beside the camera**.
+
+Full guide with the optional tap setting: **[INSTALL.md › Android](INSTALL.md#install-pixel-pals-on-android)**. Needs Android 10 or newer.
+
+### iPhone
 Pixel Pals isn't on the App Store yet. Install it for free with [AltStore](https://altstore.io):
 
 1. Set up AltStore on your iPhone once, using a Mac or Windows PC.
@@ -115,6 +130,15 @@ Scripts in `tools/`:
 - `install-free.sh <TEAM_ID> <DEVICE_ID>` — install on your own iPhone with a free Apple ID (no App Group, so the widget can't see the pet).
 - `release.sh <TEAM_ID> <BUNDLE_ID>` — archive and upload to App Store Connect / TestFlight (paid developer account).
 - `make_icon.py` — regenerates the app icon from the pet sprites.
+
+### Android
+The app is in `android/` (Kotlin, Jetpack Compose). Needs JDK 17 and the Android SDK (platform 35).
+
+- `cd android && ./gradlew assembleRelease` — builds `app/build/outputs/apk/release/app-release.apk`. Signed with your own key if `~/.android/pixelpals-release.properties` exists (`storeFile`, `password`, `alias`), otherwise with the debug key.
+- `python3 android/tools/export_shared.py` — copies the pets and all messages from `Shared/` into the app's assets, so both apps stay in sync.
+- `python3 android/tools/make_launcher_icon.py` — regenerates the launcher icon.
+
+Key files in `android/app/src/main/java/com/matsavin/pixelpals/`: `IslandService.kt` (the overlay beside the camera), `IslandView.kt` (drawing the pal and its card), `TapService.kt` (optional accessibility overlay so the pal can be tapped above the status bar), `MainActivity.kt` (the app), `PetWidget.kt`, `Reminders.kt`.
 
 ### Project layout
 - `Shared/Pets.swift` — the pets as 16×16 sprites (idle, blink, happy, sad), accessories, drawing and animation
