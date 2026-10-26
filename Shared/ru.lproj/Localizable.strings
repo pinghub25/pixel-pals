@@ -1,0 +1,87 @@
+/* Adopt / edit */
+"Adopt a pixel pal" = "Заведи пиксельного друга";
+"Adopt" = "Забрать домой";
+"Your pal" = "Твой друг";
+"Save" = "Сохранить";
+"Edit" = "Изменить";
+"Pet name" = "Имя питомца";
+"Your birthday" = "Твой день рождения";
+
+/* Pets */
+"Cat" = "Кот";
+"Dog" = "Пёс";
+"Bunny" = "Кролик";
+"Frog" = "Лягушка";
+"Ghost" = "Призрак";
+"Penguin" = "Пингвин";
+"Axolotl" = "Аксолотль";
+"Dino" = "Дино";
+
+/* Zodiac */
+"Aries" = "Овен";
+"Taurus" = "Телец";
+"Gemini" = "Близнецы";
+"Cancer" = "Рак";
+"Leo" = "Лев";
+"Virgo" = "Дева";
+"Libra" = "Весы";
+"Scorpio" = "Скорпион";
+"Sagittarius" = "Стрелец";
+"Capricorn" = "Козерог";
+"Aquarius" = "Водолей";
+"Pisces" = "Рыбы";
+"Fire" = "Огонь";
+"Earth" = "Земля";
+"Air" = "Воздух";
+"Water" = "Вода";
+"Fire sign" = "Знак огня";
+"Earth sign" = "Знак земли";
+"Air sign" = "Знак воздуха";
+"Water sign" = "Знак воды";
+"You're doing better than you think." = "У тебя получается лучше, чем кажется.";
+
+/* Home */
+"Tap %@ to say hi" = "Нажми на %@, чтобы поздороваться";
+"%@ is feeling great" = "%@ в отличном настроении";
+"%@ is hungry" = "%@ хочет есть";
+"%@ wants to play" = "%@ хочет поиграть";
+"%@ is sleepy" = "%@ хочет спать";
+"%lld-day streak" = "Серия: %lld дн.";
+"Food" = "Сытость";
+"Fun" = "Веселье";
+"Energy" = "Энергия";
+"Feed" = "Покормить";
+"Play" = "Играть";
+"Nap" = "Поспать";
+"Today · %@" = "Сегодня · %@";
+"Show %@ in the Dynamic Island" = "Показывать %@ в Dynamic Island";
+"Daily message notification" = "Ежедневное послание";
+"Deliver at" = "Время";
+"Tell me when %@ needs care" = "Сообщать, когда %@ нужна забота";
+"Send today's message now" = "Отправить послание сейчас";
+"Sent! Check your notifications" = "Отправлено! Проверь уведомления";
+"Live Activities are turned off in Settings › Pixel Pals." = "Live Activities выключены: Настройки › Pixel Pals.";
+"Notifications are turned off for Pixel Pals in Settings." = "Уведомления для Pixel Pals выключены в Настройках.";
+"%@ needs you" = "%@ ждёт тебя";
+
+/* Island and widget */
+"A note from %@" = "Послание от %@";
+"Pixel Pal" = "Пиксельный друг";
+"Your pet with today's message for your sign." = "Твой питомец и послание дня для твоего знака.";
+"Open Pixel Pals to adopt a pet" = "Открой Pixel Pals, чтобы завести питомца";
+
+/* Language, daily content and my messages */
+"Language" = "Язык";
+"System" = "Системный";
+"Daily content" = "Что показывать";
+"Sign message" = "Послание знака";
+"Quote" = "Цитата";
+"Horoscope" = "Гороскоп";
+"Mix" = "Всё понемногу";
+"My messages" = "Мои послания";
+"Write a message for future you" = "Напиши послание себе в будущее";
+"Add" = "Добавить";
+"Your messages" = "Твои послания";
+"No messages yet" = "Пока нет посланий";
+"Your messages appear when Daily content is set to My messages or Mix." = "Твои послания появляются, если в «Что показывать» выбрано «Мои послания» или «Всё понемногу».";
+"%@ · %@" = "%1$@ · %2$@";
