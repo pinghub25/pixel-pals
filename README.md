@@ -19,9 +19,9 @@
 <p align="center">
   <a href="https://github.com/pinghub25/pixel-pals/releases/latest"><b>⬇️ Download</b></a> &nbsp;·&nbsp;
   <a href="INSTALL.md"><b>📲 Install on iPhone</b></a> &nbsp;·&nbsp;
-  <a href="INSTALL.md#install-pixel-pals-on-android"><b>🤖 Install on Android</b></a> &nbsp;·&nbsp;
+  <a href="INSTALL.md#install-pixel-zodiac-on-android"><b>🤖 Install on Android</b></a> &nbsp;·&nbsp;
   <a href="docs/promo.mp4"><b>▶️ Promo video</b></a> &nbsp;·&nbsp;
-  <a href="INSTALL.md#как-установить-pixel-pals-на-iphone"><b>🇷🇺 По-русски</b></a>
+  <a href="INSTALL.md#как-установить-pixel-zodiac-на-iphone"><b>🇷🇺 По-русски</b></a>
 </p>
 
 <br>
@@ -105,7 +105,7 @@ No constant updates: the island changes only when something visible changes, wit
 2. Open it and allow your browser to install apps when asked.
 3. Open Pixel Zodiac, adopt your pal, and turn on **Show … beside the camera**.
 
-Full guide with the optional tap setting: **[INSTALL.md › Android](INSTALL.md#install-pixel-pals-on-android)**. Needs Android 10 or newer.
+Full guide with the optional tap setting: **[INSTALL.md › Android](INSTALL.md#install-pixel-zodiac-on-android)**. Needs Android 10 or newer.
 
 ### iPhone
 Pixel Zodiac isn't on the App Store yet. Install it for free with [AltStore](https://altstore.io):
